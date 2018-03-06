@@ -1,0 +1,36 @@
+{
+    "env": {
+        "node": true,
+        "browser": true,
+        "es6": true,
+        "jest/globals": true
+    },
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "plugins": [
+        "flow-vars",
+        "jest"
+    ],
+    "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error",
+        "eqeqeq": [
+            2,
+            "smart"
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "no-param-reassign": 0,
+        "no-console": 0
+    }
+}
