@@ -2,13 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 
-import stores from './stores';
+import RootStore from './stores/root';
 import App from './App';
 import PageNotFound from './views/PageNotFound';
 import Main from './views/Main';
 
+const rootStore = RootStore.create({});
+
 export default () => (
-  <Provider {...stores}>
+  <Provider rootStore={rootStore}>
     <Router>
       <App>
         <Switch>

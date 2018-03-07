@@ -1,10 +1,8 @@
-// @flow
-
 import { types } from 'mobx-state-tree';
 import { User } from '../../models';
 
 const UserStore = types
-  .model('userStore', {
+  .model('UserStore', {
     users: types.array(User),
   })
   .actions(self => ({

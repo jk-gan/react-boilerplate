@@ -17,4 +17,4 @@ class App extends React.Component<Props> {
   }
 }
 
-export default inject('uiStore')(observer(App));
+export default inject('rootStore')(observer(App));

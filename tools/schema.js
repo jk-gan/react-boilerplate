@@ -26,7 +26,7 @@ const schema = {
             faker: 'internet.email',
           },
         },
-        required: ['id', 'type', 'lastname', 'email'],
+        required: ['id', 'firstName', 'lastName', 'email'],
       },
     },
   },
