@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from 'react';
+import { inject } from 'mobx-react';
 import styled from 'styled-components';
 // import { inject } from 'mobx-react';
 
@@ -11,15 +12,24 @@ const Container = styled.div`
 `;
 
 class Main extends React.Component<Props> {
-  componentWillMount() {}
+  componentDidMount() {
+    this.fetchDate();
+  }
+
+  fetchDate = async () => {
+    const { rootStore } = this.props;
+    await rootStore.userStore.fetchUsers();
+  }
 
   render() {
+    const { rootStore } = this.props;
+
     return (
       <div className="App">
-        <Container>HELLO WORLD</Container>
+        <Container>{rootStore.userStore.users[0].fullName}</Container>
       </div>
     );
   }
 }
 
-export default Main;
+export default inject('rootStore')(Main);

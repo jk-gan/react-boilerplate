@@ -23,6 +23,7 @@ const schema = {
           },
           email: {
             type: 'string',
+            format: 'email',
             faker: 'internet.email',
           },
         },
